@@ -19,7 +19,7 @@ export default function Header() {
             placeholder="Search...."
             className=" bg-slate-100 font-mono text-md  focus:outline-none text-md w-24 sm:w-64"
           />
-          <FaSearch className="text-slate-600 cursor-pointer" />
+          <FaSearch className="text-slate-600 "/>
         </form>
         <ul className="flex gap-4 font-semibold text-slate-800">
           <Link to='/' ><li className="hidden sm:inline hover:underline">Home</li></Link>
