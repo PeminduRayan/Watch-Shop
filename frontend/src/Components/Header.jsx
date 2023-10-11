@@ -13,13 +13,13 @@ export default function Header() {
             <span className="text-gray-500  text-xl">Shop</span>
           </h1>
         </Link>
-        <form className="bg-slate-100 p-3 rounded-lg flex items-center">
+        <form className="bg-slate-100 p-2 rounded-lg flex items-center">
           <input
             type="text"
-            placeholder="Need a watch? Search...."
-            className=" bg-slate-100 focus:outline-none text-md w-24 sm:w-64"
+            placeholder="Search...."
+            className=" bg-slate-100 font-mono text-md  focus:outline-none text-md w-24 sm:w-64"
           />
-          <FaSearch className="text-slate-600" />
+          <FaSearch className="text-slate-600 cursor-pointer" />
         </form>
         <ul className="flex gap-4 font-semibold text-slate-800">
           <Link to='/' ><li className="hidden sm:inline hover:underline">Home</li></Link>
