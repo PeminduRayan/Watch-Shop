@@ -1,9 +1,13 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
+import withMT from "@material-tailwind/react/utils/withMT";
  
-module.exports = withMT({
+const inter = "tailwindcss-font-inter";
+export default withMT({
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'home': "url('src/assets/images/Carousel/img2.jpg')"
+    },
   },
-  plugins: [require("daisyui")],
-});
+  plugins: [require(inter), require("daisyui") ]
+}});

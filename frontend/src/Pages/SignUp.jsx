@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
+import Header from "../Components/Header";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -49,7 +50,7 @@ export default function SignUp() {
    //console.log(formData);
 
   return (
-    <div className=" max-w-lg items-center mx-auto">
+    <><div className=" max-w-lg items-center mx-auto ">
       <h1 className="text-3xl font-bold text-center my-7 ">Sign Up</h1>
       <form onSubmit={handleSubmit} className="flex flex-col m-2 gap-3 ">
         <input
@@ -57,24 +58,21 @@ export default function SignUp() {
           className="bg-white p-3 rounded-lg focus:outline-none "
           id="username"
           placeholder="Username"
-          onChange={handleChange}
-        />
+          onChange={handleChange} />
         <input
           type="text"
           className="bg-white p-3 rounded-lg focus:outline-none"
           id="email"
           placeholder="E-mail"
-          onChange={handleChange}
-        />
+          onChange={handleChange} />
         <input
           type="password"
           className="bg-white p-3 rounded-lg focus:outline-none"
           id="password"
           placeholder="Password"
-          onChange={handleChange}
-        />
-        <button disabled={loading} className="bg-slate-700 uppercase rounded-lg p-3 text-white font-semibold hover:opacity-90 disabled:opacity-70">
-          {loading ? 'Loading...': 'Sign up'}
+          onChange={handleChange} />
+        <button disabled={loading} className="bg-black uppercase rounded-lg p-3 text-white font-semibold hover:opacity-90 disabled:opacity-70">
+          {loading ? 'Loading...' : 'Sign up'}
         </button>
       </form>
       <div className="flex flex-row gap-2 mt-5">
@@ -87,7 +85,7 @@ export default function SignUp() {
         </Link>
       </div>
       {errors && (
-        <p className="bg-red-100 border-l-4 border-red-500 text-red-700 px-4 py-3" >{errors}</p>)}
-    </div>
+        <p className="bg-red-100 border-l-4 border-red-500 text-red-700 px-4 py-3">{errors}</p>)}
+    </div></>
   );
 }
