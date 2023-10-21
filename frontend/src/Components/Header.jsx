@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className=' p-1 bg-gray-900 shadow dark:bg-white  '>
-      <div className="px-10  flex items-center justify-between bg-transparent">
+      <div className="px-10 flex items-center justify-between ">
         <Link to="/">
-          <span className="text-sm font-semibold sm:text-xl flex flex-wrap text-black space-x-1">
-          <img width="28" height="32" className='mr-1' src="https://img.icons8.com/ios-filled/50/FFFFFF/watches-front-view.png" alt="watches-front-view"/>
+          <span className="text-sm font-semibold sm:text-sm flex flex-wrap text-black space-x-1">
+          <img width="28" height="32" className='' src="https://img.icons8.com/ios-filled/50/FFFFFF/watches-front-view.png" alt="watches-front-view"/>
             <span className="text-white  text-xl">Neel</span>
             <span className="text-white text-xl">Watch</span>
             <span className="text-white  text-xl">Shop</span>
