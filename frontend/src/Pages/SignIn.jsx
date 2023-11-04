@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { Link, useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from 'react-redux';
+import { signInStart,signInSuccess,signInFailure } from "../redux/user/userSlice";
+import OAuth from "./OAuth";
 
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
-  const [errors, setErrors] = useState(null);
-  const [loading, setLoading] = useState(false);
+const {loading, error} = useSelector((state) => state.user);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
   const handleChange = (e) => {
     setFormData({
       ...formData, //to keep the previous data in place
@@ -18,7 +23,7 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault(); // To not refresh the page when we submitting
     try {
-      setLoading(true);
+      dispatch(signInStart());
       //From here we use fetch method to send data to the api/server
       const res = await fetch('/api/auth/signin',
       {
@@ -31,19 +36,16 @@ export default function SignIn() {
    
       const data = await res.json();
       if(data.success == false){ //methana success eka gatte api wla index.js wla tiyena error enawda nedd kiyana eka matha
-       setErrors(data.errors);
-       setLoading(false);
-       console.log(data);
+       dispatch(signInFailure(data.message));
+       //console.log(data);
       return;  
       
     } 
-    setLoading(false);
-    setErrors(null);
+    dispatch(signInSuccess(data));
     navigate('/');
   }
     catch (error) {
-      setLoading(false);
-      setErrors(error.message);
+      dispatch(signInFailure(error.message));
     }
     };
   
@@ -68,6 +70,7 @@ export default function SignIn() {
         <button disabled={loading} className="bg-black uppercase rounded-lg p-3 text-white font-semibold hover:opacity-90 disabled:opacity-70">
           {loading ? 'Loading...' : 'Sign in'}
         </button>
+        <OAuth/>
       </form>
       <div className="flex flex-row gap-2 mt-5">
         <p className="pl-3">Don't Have an account? </p>
@@ -78,7 +81,7 @@ export default function SignIn() {
           <span>Sign up</span>
         </Link>
       </div>
-      {errors && <p className ="text-red-500 mt-5">{errors}</p>}
+      {/* {error && <p className ="text-red-500 mt-5">{error}</p>} */}
     </div></>
   );
 }
