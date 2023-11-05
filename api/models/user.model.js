@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 
+
 const userSchema = new mongoose.Schema(
     {
         username : 
@@ -22,14 +23,12 @@ const userSchema = new mongoose.Schema(
         avatar :
         {
             type : String,
-            default : "https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg?w=740",
+            default : 'https://img.icons8.com/ios-filled/50/gender-neutral-user.png'
         }
     },
-
     {
         timestamps : true
     }
-
 );
 
 const User = mongoose.model('User',userSchema);

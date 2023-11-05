@@ -9,6 +9,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Gallery from './Pages/Gallery';
 import Contact from './Pages/Contact';
+import Products from './Pages/Products';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
     <Route path='/profile' element= {<Profile/>}/>
     <Route path='/gallery' element= {<Gallery/>}/>
     <Route path='/contact' element= {<Contact/>}/>
+    <Route path='/Products' element= {<Products/>}/>
 
     </Routes>
     <Footer/>
