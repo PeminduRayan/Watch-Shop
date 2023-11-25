@@ -1,14 +1,14 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
 export default function Header() {
 
-  const currentUser = useSelector((state) => {  user : state.user})
+  // Using useSelector to get the current user from the Redux store
+  const currentUser = useSelector((state) => state.user.currentUser);
 
   return (
-    <header className=" p-1 bg-gray-900 shadow dark:bg-white font-inter">
+    <header className="p-1 bg-gray-900 shadow dark:bg-white dark:text-white font-inter">
       <div className="px-10 flex items-center justify-between ">
         <Link to="/">
           <span className="text-sm font-semibold sm:text-sm flex flex-wrap text-black space-x-1">
@@ -24,12 +24,12 @@ export default function Header() {
             <span className="text-white  text-xl">Shop</span>
           </span>
         </Link>
-        <form className=" p-1 font-inter rounded-lg flex items-center">
+        <form className="p-1 font-inter rounded-lg flex items-center">
           <div className="flex flex-row">
             <input
               type="text"
               placeholder="Search...."
-              className="bg-gray-700 text-lg text-white focus:outline-none rounded-lg p-2  text-md w-24  sm:w-64"
+              className="bg-gray-700 text-lg text-white focus:outline-none rounded-lg p-2 text-md w-24 sm:w-64"
             />
           </div>
         </form>
@@ -40,19 +40,9 @@ export default function Header() {
           <Link to="/About">
             <li className="hidden sm:inline hover:underline">About Us</li>
           </Link>
-         
-          <Link to='/signin'>
-            {currentUser ? 
-            (
-           <span>{currentUser.avatar}</span>
-            ) 
-            : 
-            ( 
-            <li className="text-white hover:underline">Sign In</li>
-            )}
-          
+          <Link to='/profile'>
+          {currentUser ? (<img src={currentUser.avatar} alt="Profile "/>) : ( <li className="hover:underline">Sign in</li>)}
           </Link>
-        
         </ul>
       </div>
     </header>

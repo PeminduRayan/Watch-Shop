@@ -17,12 +17,17 @@ export default withMT({
       '3xl': '1.875rem',
       '4xl': '2.25rem',
       '5xl': '3rem',
-      '6xl': '4rem'
+      '6xl': '4rem',
+      '7xl': '5rem',
+      '8xl': '6rem',
     }
   },
     extend: {
       backgroundImage: {
         'home': "url('https://watermark.lovepik.com/photo/40083/2170.jpg_wh1200.jpg')",
+    },
+    backgroundVideo : {
+      'video' : '/src/assets/video/bg-vid.mp4'
     },
     
   },

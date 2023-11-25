@@ -10,6 +10,9 @@ import Footer from './Components/Footer';
 import Gallery from './Pages/Gallery';
 import Contact from './Pages/Contact';
 import Products from './Pages/Products';
+import Mens from './Pages/Categories/Mens';
+import Kids from './Pages/Categories/Kids';
+import Womens from './Pages/Categories/Womens';
 
 const App = () => {
   return (
@@ -24,6 +27,9 @@ const App = () => {
     <Route path='/gallery' element= {<Gallery/>}/>
     <Route path='/contact' element= {<Contact/>}/>
     <Route path='/Products' element= {<Products/>}/>
+    <Route path='/mens' element= {<Mens/>}/>
+    <Route path='/kids' element= {<Kids/>}/>
+    <Route path='/womens' element= {<Womens/>}/>
 
     </Routes>
     <Footer/>

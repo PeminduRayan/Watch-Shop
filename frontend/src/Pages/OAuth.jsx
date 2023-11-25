@@ -35,6 +35,9 @@ export default function OAuth() {
       console.log("Cannot connect to google", error);
     }
   };
+
+
+  
   return (
     <button
       className="flex flex-row  gap-2 items-center  justify-center bg-red-500 uppercase rounded-lg p-3 text-white font-semibold hover:opacity-90 disabled:opacity-70"
