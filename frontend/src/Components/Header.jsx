@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 export default function Header() {
 
-  // Using useSelector to get the current user from the Redux store
   const currentUser = useSelector((state) => state.user.currentUser);
 
   return (
@@ -40,8 +39,17 @@ export default function Header() {
           <Link to="/About">
             <li className="hidden sm:inline hover:underline">About Us</li>
           </Link>
-          <Link to='/profile'>
-          {currentUser ? (<img src={currentUser.avatar} alt="Profile "/>) : ( <li className="hover:underline">Sign in</li>)}
+
+          <Link to="/profile">
+            {currentUser ? (
+              <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                <img src={currentUser.avatar} alt="" />
+              </div>
+            ) : ( 
+              <React.Fragment>
+                <li className="hover:underline">Sign in</li>
+              </React.Fragment>
+            )}
           </Link>
         </ul>
       </div>
