@@ -1,0 +1,9 @@
+<form className="p-1 font-inter rounded-lg flex items-center">
+          <div className="flex flex-row">
+            <input
+              type="text"
+              placeholder="Search...."
+              className="bg-gray-700 text-lg text-white focus:outline-none rounded-lg p-2 text-md w-24 sm:w-64"
+            />
+          </div>
+        </form>

@@ -1,6 +1,8 @@
 import React from "react";
 import { useRef } from "react";
 import { Button } from "@material-tailwind/react";
+import HomeCarousel from "../Components/HomeCarousel";
+import Contact from "./Contact";
 
 function Home() {
   
@@ -36,16 +38,12 @@ function Home() {
         </div>
       </div>
       
-
-      
+    
       <div class="bg-gray-200 font-inter pb-6 sm:pb-8 lg:pb-12">
- 
-
   <section ref={ref} class="mx-auto max-w-screen-2xl px-4 md:px-8">
     <div class="mb-8 flex flex-wrap justify-between md:mb-16">
       <div class="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
         <h1 class="mb-4 text-4xl font-bold text-black sm:text-5xl md:mb-8 md:text-6xl">Find your<br />Watches here</h1>
-
         <p class="max-w-md leading-relaxed text-gray-700 animate-pulse xl:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares characteristics of real text.</p>
       </div>
 
@@ -59,22 +57,18 @@ function Home() {
         </div>
       </div>
     </div>
-
     <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
       <div class="flex h-12 w-64 divide-x font-inter overflow-hidden rounded-lg bg-gray-900  font-bold">
-        <a href="/mens" class="flex w-1/3 items-center justify-center  text-white transition duration-100 hover:bg-gray-100 active:bg-gray-900">Men</a>
-        <a href="/womens" class="flex w-1/3 items-center justify-center text-white transition duration-100 hover:bg-gray-100 active:bg-gray-200">Women</a>
-        <a href="/kids" class="flex w-1/3 items-center justify-center text-white transition duration-100 hover:bg-gray-100 active:bg-gray-200">Kids</a>
+        <a href="/mens" class="flex w-1/2 items-center justify-center  text-white transition duration-100 hover:bg-gray-100 active:bg-gray-900">Men</a>
+        <a href="/womens" class="flex w-1/2 items-center justify-center text-white transition duration-100 hover:bg-gray-100 active:bg-gray-200">Women</a>
+        
       </div>
-
-
-      
-     
     </div>
   </section>
+  <HomeCarousel />
 </div>
+<Contact/>
     </>
   );
 }
-
 export default Home;

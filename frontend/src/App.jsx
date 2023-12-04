@@ -13,6 +13,7 @@ import Products from './Pages/Products';
 import Mens from './Pages/Categories/Mens';
 import Kids from './Pages/Categories/Kids';
 import Womens from './Pages/Categories/Womens';
+import PrivateRoute from './Pages/PrivateRoute';
 
 const App = () => {
   return (
@@ -23,7 +24,9 @@ const App = () => {
     <Route path='/signin' element= {<SignIn/>}/>
     <Route path='/signup' element= {<SignUp/>}/>
     <Route path='/about' element= {<About/>}/>
+    <Route element= {<PrivateRoute/>} >
     <Route path='/profile' element= {<Profile/>}/>
+    </Route>
     <Route path='/gallery' element= {<Gallery/>}/>
     <Route path='/contact' element= {<Contact/>}/>
     <Route path='/Products' element= {<Products/>}/>

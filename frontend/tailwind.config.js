@@ -2,7 +2,7 @@ import withMT from "@material-tailwind/react/utils/withMT";
  
 const inter = "tailwindcss-font-inter";
 export default withMT({
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}","./node_modules/flowbite/**/*.js"],
   theme: {
     fontFeatureSettings: {
       numeric: ['tnum', 'salt', 'ss02']
@@ -31,5 +31,5 @@ export default withMT({
     },
     
   },
-  plugins: [require('tailwindcss-font-inter','daisyui')]
+  plugins: [require('tailwindcss-font-inter','daisyui','flowbite/plugin')]
 });

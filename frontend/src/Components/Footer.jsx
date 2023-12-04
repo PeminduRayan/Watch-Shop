@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
   return (
     
-<footer class="bg-gray-900 shadow font-inter dark:bg-white">
+<footer class="bg-gray-900 shadow static font-inter dark:bg-white">
     <div class="w-full max-w-screen-xl mx-auto  md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="/" class="flex items-center mb-4 sm:mb-0">
@@ -13,10 +13,6 @@ export default function Footer() {
             <ul class="flex flex-wrap items-center mb-6 text-d font-medium text-white sm:mb-0 dark:text-gray-400">
                 <li>
                     <a href="/about" class="mr-4 hover:underline md:mr-6 ">About</a>
-                </li>
-                
-                <li>
-                    <a href="/contact" class="hover:underline">Contact</a>
                 </li>
             </ul>
         </div>
