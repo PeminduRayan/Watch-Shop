@@ -1,22 +1,26 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
+
 export default function Profile() {
   const { currentUser } = useSelector((state) => state.user);
+
   return (
     <div>
       <form className=" flex flex-col space-y-2 m-3 items-center text-center font-inter justify-center">
         <h1 className="text-3xl font-bold font-inter p-3">Profile</h1>
         <img
           src={currentUser.avatar}
+         
           className="rounded-full border-[2px] object-cover border-gray-700 "
         />
+       
 
         <input
           type="text"
           id="username"
           className="focus:outline-none  w-[400px] border rounded-lg p-3"
-          placeholder="User Name"
+          placeholder="Username"
         />
         <input
           type="email"
