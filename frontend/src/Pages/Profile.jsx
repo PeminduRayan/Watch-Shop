@@ -1,22 +1,50 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-
+import React from "react";
+import { useSelector } from "react-redux";
 
 export default function Profile() {
   const { currentUser } = useSelector((state) => state.user);
   return (
-    <>
-    <div className='items-center border-black-[10px]  m-auto text-center  w-fit justify-center flex flex-col'>
-    <div className='text-4xl font-bold   items-center text-center  mt-5 '>Profile</div>
-   <div className='flex flex-col rounded-lg space-y-2 py-3 gap-4 items-center text-center '>
-    <img className=' flex rounded-full  items-center text-center  p-3 circle border-gray-400 justify-center ' src={currentUser.avatar}/>
-    <span>{currentUser.username}</span>
-    <span>{currentUser.email}</span>
-    
+    <div>
+      <form className=" flex flex-col space-y-2 m-3 items-center text-center font-inter justify-center">
+        <h1 className="text-3xl font-bold font-inter p-3">Profile</h1>
+        <img
+          src={currentUser.avatar}
+          className="rounded-full border-[2px] object-cover border-gray-700 "
+        />
 
-    <button className='w-64 bg-red-600 rounded-lg text-white font-bold hover:bg-blue-gray-700 p-3'>Update </button>
-   </div>
-   </div>
-    </>
-  )
-  }
+        <input
+          type="text"
+          id="username"
+          className="focus:outline-none  w-[400px] border rounded-lg p-3"
+          placeholder="User Name"
+        />
+        <input
+          type="email"
+          id="email"
+          className="focus:outline-none w-[400px] border rounded-lg p-3"
+          placeholder="E-mail"
+        />
+        <input
+          type="password"
+          id="password"
+          className="focus:outline-none w-[400px] border rounded-lg p-3 "
+          placeholder="Password"
+        />
+        <button className="bg-green-700 p-3 w-[400px] rounded-lg text-white hover:bg-red-800  ">
+          Update
+        </button>
+
+        <span className="flex flex-row w-[400px]">
+          <a className="text-red-900 font-medium  text-sm cursor-pointer hover:font-bold flex  text-start ">
+            Delete Account
+          </a>
+          <a className="text-red-900 font-medium  text-sm cursor-pointer hover:font-bold ml-auto">
+            Sign Out?
+          </a>
+        </span>
+      </form>
+
+      <div></div>
+    </div>
+  );
+}
